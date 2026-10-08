@@ -2,10 +2,6 @@
 
 Assessment for telemetry monitoring application.
 
-## Demo
-
-[▶ Watch Demo](./demo.mp4)
-
 ## Used Stack
 
 - Angular 20 + TypeScript
