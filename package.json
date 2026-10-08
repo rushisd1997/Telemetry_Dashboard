@@ -1,0 +1,22 @@
+{
+  "name": "telemetry-monitor",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix frontend && npm install --prefix backend && npm install --prefix desktop",
+    "start": "concurrently -k \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:desktop\"",
+    "start:backend": "npm run start --prefix backend",
+    "start:frontend": "npm run start --prefix frontend",
+    "start:desktop": "wait-on http://localhost:4200 http://localhost:3001/api/dashboard && npm run start --prefix desktop",
+    "build": "npm run build --prefix frontend",
+    "start:production": "concurrently -k \"npm run start --prefix backend\" \"npm run electron:production --prefix desktop\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "wait-on": "^8.0.4"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "chartjs-plugin-zoom": "^2.2.0"
+  }
+}

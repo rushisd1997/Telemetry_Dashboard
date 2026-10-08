@@ -1,0 +1,10 @@
+<div class="gauge" [class.warning]="status === 'Warning'" [class.critical]="status === 'Critical'">
+      <svg viewBox="0 0 120 120" aria-label="{{ label }} gauge">
+        <circle class="gauge-track" cx="60" cy="60" r="48"></circle>
+        <circle class="gauge-value" cx="60" cy="60" r="48" [style.stroke-dasharray]="dashArray"></circle>
+      </svg>
+      <div class="gauge-content">
+        <span class="gauge-value-text">{{ value | number:'1.0-2' }}</span>
+        <span class="gauge-unit">{{ unit }}</span>
+      </div>
+    </div>
